@@ -28,7 +28,7 @@ Przechowują kolekcje zmiennych jednego typu
 $fruits = @(
     "apple",
     "orange",
-    "trawberry",
+    "strawberry",
     "pear"
 )
 ```
