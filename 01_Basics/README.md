@@ -1,5 +1,7 @@
 # Podstawy
 
+## Zmienne
+Deklaracja każdej zmiennej w PowerShell rozpoczyna się od znaku dolara `$` oraz nazwy opisującej zawartość zmiennej.
 ## Przykład implementacji zmiennej liczbowej
 ```ps
 $numberVariable = 10;
