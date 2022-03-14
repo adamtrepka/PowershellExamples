@@ -1,29 +1,31 @@
 # Podstawy
+## 0. Spis treści
 
-## Zmienne
+1. [Zmienne](#1-zmienne)
+## 1. Zmienne
 Deklaracja każdej zmiennej w PowerShell rozpoczyna się od znaku dolara `$` oraz nazwy opisującej zawartość zmiennej.
-## Przykład implementacji zmiennej liczbowej
+### Przykład implementacji zmiennej liczbowej
 ```ps
 $numberVariable = 10;
 $anotherNumberVariables = 0.1;
 ```
-## Przykład implementacji zmiennej tekstowej
+### Przykład implementacji zmiennej tekstowej
 ```ps
 $textVariable = "Example of text variable";
 ```
-## Operacje na zmiennych
-### Tworzenie zmiennej zawierającej wartość innej zmiennej
+### Operacje na zmiennych
+#### Tworzenie zmiennej zawierającej wartość innej zmiennej
 ```ps
 $variableContainsValueFromOtherVariables = "Value of numberVariable is: $numberVariable";
 ```
-### Dodawanie wartości dwóch zmiennych
+#### Dodawanie wartości dwóch zmiennych
 ```ps
 $sumOfTwoNumerVariables = $numberVariable + $anotherNumberVariables;
 ```
 
-## Tablice
+### Tablice
 Przechowują kolekcje zmiennych jednego typu
-### Przykład implementacji tablicy wartości tekstowych
+#### Przykład implementacji tablicy wartości tekstowych
 ```ps
 $fruits = @(
     "apple",
@@ -32,15 +34,15 @@ $fruits = @(
     "pear"
 )
 ```
-### Przykład implementacji tablicy wartości liczbowych
+#### Przykład implementacji tablicy wartości liczbowych
 ```ps
 $numbers = @(5,10,50,22,11,90);
 $anotherArrayOfNumbers = 10..50; #Tworzy tablice wypełnioną liczbami z zakresu od 10 do 50;
 ```
 
-## Wyświetlanie zawartości zmiennych
+### Wyświetlanie zawartości zmiennych
 W języku PowerShell do wyświetlania zawartości zmiennych używamy polecenia `Write-Host`
-### Przykład wyświetlenia zawartości zmiennej
+#### Przykład wyświetlenia zawartości zmiennej
 ```ps
 Write-Host $numberVariable;
 Write-Host $textVariable;
@@ -51,4 +53,4 @@ Write-Host $numbers;
 ```
 Do wyczyszczenia zawartości konsoli używamy polecenia `Clear-Host` lub `cls`
 
-## [Implementacja przykładów z tego modułu](Basics_01.ps1)
+### [Implementacja przykładów z tego modułu](Basics_01.ps1)
