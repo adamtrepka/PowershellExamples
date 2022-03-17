@@ -10,3 +10,7 @@
     * [Instrukcje warunkowe](01_Basics#2-instrukcje-warunkowe)
         * Operatory porównania
         * Składnia instrukcji warunkowej
+    * [Pętle](01_Basics#3-pętle)
+        * Pętla FOR
+        * Pętla FOREACH
+        * Słowo kluczowe BREAK

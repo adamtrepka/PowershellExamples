@@ -10,7 +10,7 @@ $sumOfTwoNumerVariables = $numberVariable + $anotherNumberVariables;
 $fruits = @(
     "apple",
     "orange",
-    "trawberry",
+    "strawberry",
     "pear"
 )
 

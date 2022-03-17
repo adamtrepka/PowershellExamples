@@ -3,6 +3,7 @@
 
 1. [Zmienne](#1-zmienne)
 1. [Instrukcje warunkowe](#2-instrukcje-warunkowe)
+1. [Pętle](#3-pętle)
 ## 1. Zmienne
 Deklaracja każdej zmiennej w PowerShell rozpoczyna się od znaku dolara `$` oraz nazwy opisującej zawartość zmiennej.
 ### Przykład implementacji zmiennej liczbowej
@@ -105,3 +106,78 @@ else {
 }
 ```
 ### [Implementacja przykładów z tego modułu](Basics_02.ps1)
+
+## 3. Pętle
+Umożliwia cykliczne wykonywanie ciągu instrukcji określoną liczbę razy, do momentu zajścia pewnych warunków, dla każdego elementu kolekcji lub w nieskończoność.
+
+### Pętla FOR
+Instrukcja umożliwia utworzenie pętli, która uruchamia fragment programu, jeżeli zostaje spełniony określony warunek.
+
+#### Składnia pętli FOR
+
+```ps
+for (<Init>; <Condition>; <Repeat>)
+{
+    <Statement list>
+}
+```
+
+1. Pętle rozpoczynamy od słowa kluczowego `for`.
+2. Następnie w nawiasach okrągłych określamy 3 następujące parametry oddzielone symbolem średnika `';'`:
+    1. `<init>` - Polecenie wywoływane przed uruchomieniem pętli np. inicjacja zmiennej z wartością początkową `$index = 0`.
+    2. `<Condition>` - Warunek, który zostanie sprawdzony przy każdej iteracji pętli. Jeżeli warunek zostanie spełniony to określony fragment programu zostanie ponownie wykonany np. `$index < 10`
+    3. `<Repeat>` - Polecenie wykonywane za każdym razem gdy pętla zostanie powtórzona np. zwiększenie wartości zmiennej zadeklarowanej w pierwszym parametrze `$index++`.
+    4. `<Statement list>` - Instrukcje, które mają zostać wykonane przy każdym wywołaniu pętli.
+#### Przykład implementacji pętli FOR
+```ps
+#Przykład pętli, która zostanie wywołana 10 razy 
+for ($index = 0; $index -lt 10; $index++) {
+    Write-Host "Przykład implementacji pętli for";
+}
+```
+
+```ps
+#Przykład wykorzystania pętli for do pobierania poszczególnych elementów tablicy
+
+$fruits = @(    #Deklaracja tablicy
+    "apple",
+    "orange",
+    "strawberry",
+    "pear"
+)
+
+for ($index = 0; $index -lt $fruits.Count; $index++) { #Właściwość "Count" zwraca liczbę elementów tablicy
+    $currentFruit = $fruits[$index]; #W celu pobrania pojedynczego elementu tablicy należy w nawiasach kwadratowych podać indeks, pod którym się znajduje.
+    Write-Host "Wybrany owoc to: $currentFruit";
+}
+```
+
+### Pętla FOREACH
+Instrukcja umożliwia utworzenie pętli, która pozwoli na przejście po wszystkich elementach tabeli.
+
+#### Przykład implementacji pętli FOREACH
+```ps
+foreach($currentFruit in $fruits)
+{
+    Write-Host "Wybrany owoc to: $currentFruit";
+}
+```
+
+### Słowo kluczowe BREAK
+Instrukcja `break` może zostać zastosowana jeżeli chcemy przerwać działanie pętli.
+
+#### Przykład wykorzystania słowa kluczowego BREAK
+```ps
+#Przykład wykorzystania słowa kluczowego break. 
+#Jeżeli pobrana wartość z tabeli będzie równa "strawberry" to wyświetl komunikat i przerwij działanie pętli.
+foreach($currentFruit in $fruits)
+{
+    if($currentFruit -eq "strawberry")
+    {
+        Write-Host "Wybrany owoc to: $currentFruit";
+        break;
+        Write-Host "Ten komunikat nigdy nie zostanie wyświetlony";
+    }
+}
+```
+### [Implementacja przykładów z tego modułu](Basics_03.ps1)
