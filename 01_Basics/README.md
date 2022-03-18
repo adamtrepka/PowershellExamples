@@ -4,6 +4,7 @@
 1. [Zmienne](#1-zmienne)
 1. [Instrukcje warunkowe](#2-instrukcje-warunkowe)
 1. [Pętle](#3-pętle)
+1. [Obiekty](#4-obiekty)
 ## 1. Zmienne
 Deklaracja każdej zmiennej w PowerShell rozpoczyna się od znaku dolara `$` oraz nazwy opisującej zawartość zmiennej.
 ### Przykład implementacji zmiennej liczbowej
@@ -181,3 +182,23 @@ foreach($currentFruit in $fruits)
 }
 ```
 ### [Implementacja przykładów z tego modułu](Basics_03.ps1)
+
+## 4. Obiekty
+Obiekt ma za zadanie opisać wybrany fragment rzeczywistości. Obiekty zawierają w sobie właściwości mające na celu opisać wybrane cechy danego obiektu. Na przykład chcąc zaimplementować obiekt opisujący psa możemy opisać go za pomocą szeregu właściwości takich jak imię, rasa, wiek itp.
+
+### Składnia obiektu w języku PowerShell
+```ps
+$firstDog = [PSCustomObject]@{
+    Name = "Mike";
+    Age = 12;
+    Breed = "Husky"; 
+    #<property> = <value>;
+}
+```
+1. Deklarujemy zmienną do której przypisany zostanie obiekt np. `$firstDog`
+2. Do zmiennej przypisujemy obiekt korzystając z podanej składni `[PSCustomObject]@{}`.
+3. Uzupełniamy właściwości obiektu korzystając ze składni:
+    * `<property>` - Nazwa właściwości.
+    * `<value>` - Wartość właściwości.
+
+### [Implementacja przykładów z tego modułu](Basics_04.ps1)

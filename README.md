@@ -14,3 +14,5 @@
         * Pętla FOR
         * Pętla FOREACH
         * Słowo kluczowe BREAK
+    * [Obiekty](01_Basics#4-obiekty)
+        * Składnia obiektu
