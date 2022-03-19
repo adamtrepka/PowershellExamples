@@ -7,6 +7,7 @@
         * Operacje na zmiennych
         * Deklaracja tablic
         * Wyświetlanie zawartości zmiennych w konsoli
+        * NULL
     * [Instrukcje warunkowe](01_Basics#2-instrukcje-warunkowe)
         * Operatory porównania
         * Składnia instrukcji warunkowej

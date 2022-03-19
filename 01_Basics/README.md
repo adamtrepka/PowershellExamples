@@ -57,6 +57,9 @@ Write-Host $numbers;
 ```
 Do wyczyszczenia zawartości konsoli używamy polecenia `Clear-Host` lub `cls`
 
+### NULL
+W obiektowych językach programowania zmienne, do których nie przypiszemy żadnej wartości mają "wartość" `$null`. Null oznacza wartość pustą lub nieznaną.
+
 ### [Implementacja przykładów z tego modułu](Basics_01.ps1)
 
 ## 2. Instrukcje warunkowe 
