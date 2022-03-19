@@ -21,3 +21,5 @@
         * Składnia funkcji
         * Przekazywanie parametru do funkcji
         * Zwracanie wartości przez funkcje
+2. [Podstawy - ćwiczenia](02_BasicExercises)
+    * [Przygotować funkcje do generowania losowego ciągu liczb](02_BasicExercises#1-przygotować-funkcje-do-generowania-losowego-ciągu-liczb)
