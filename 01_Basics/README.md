@@ -5,6 +5,7 @@
 1. [Instrukcje warunkowe](#2-instrukcje-warunkowe)
 1. [Pętle](#3-pętle)
 1. [Obiekty](#4-obiekty)
+1. [Funkcje](#5-funkcje)
 ## 1. Zmienne
 Deklaracja każdej zmiennej w PowerShell rozpoczyna się od znaku dolara `$` oraz nazwy opisującej zawartość zmiennej.
 ### Przykład implementacji zmiennej liczbowej
@@ -202,3 +203,64 @@ $firstDog = [PSCustomObject]@{
     * `<value>` - Wartość właściwości.
 
 ### [Implementacja przykładów z tego modułu](Basics_04.ps1)
+
+## 5. Funkcje
+Funkcją nazywamy fragment kodu, który wykonuje konkretne zadanie.
+
+### Składnia funkcji 
+```ps
+#Deklaracja funkcji
+function Write-AuthorName {
+    Write-Host "Autorem funkcji jest Adam";    
+}
+
+#Wywołanie funkcji
+Write-AuthorName
+```
+
+1. Deklaracje funkcji rozpoczynamy od słowa kluczowego `function`.
+2. Następnie podajemy nazwę naszej funkcji np. `Write-AuthorName`.
+3. Kolejnym krokiem jest wprowadzenie kodu funkcji.
+
+### Przekazywanie parametrów do funkcji
+Chcąc przekazać parametr do funkcji należy wykorzystać słowo kluczowe `param`. Następnie w nawiasach okrągłych podajemy nazwy parametrów, które chcemy wykorzystać w funkcji.
+```ps
+#Deklaracja funkcji z parametrem
+function Write-MyName {
+    param (
+        $name
+    )
+    Write-Host "Witaj $name"
+}
+
+#Wywołanie funkcji z parametrem
+Write-MyName -name Adam
+```
+
+### Zwracanie wartości przez funkcję
+Istnieje możliwość zwrócenia rezultatu funkcji do późniejszego wykorzystania. W tym celu należy wykorzystać słowo kluczowe `return`.
+
+```ps
+#Deklaracja funkcji zwracającej wartość
+function Get-ArrayOfRandomNumbers
+{
+    param(
+        $arrayLength = 10 #Można przypisać domyślną wartość parametru.
+    )
+
+    $result = @();
+
+    for ($i = 0; $i -lt $arrayLength; $i++) {
+        #Wylosuj liczbę z zakresu od -10 do 10 oraz dodaj jej wartość do tablicy
+        $result += Get-Random -Minimum -10 -Maximum 10; 
+    }
+
+    return $result;
+}
+
+#Wywołanie funkcji zwracającej wartość
+$randomArray = Get-ArrayOfRandomNumbers -arrayLength 5
+Write-Host $randomArray;
+```
+
+### [Implementacja przykładów z tego modułu](Basics_05.ps1)

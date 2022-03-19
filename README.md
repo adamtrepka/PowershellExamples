@@ -16,3 +16,7 @@
         * Słowo kluczowe BREAK
     * [Obiekty](01_Basics#4-obiekty)
         * Składnia obiektu
+    * [Funkcje](01_Basics#5-funkcje)
+        * Składnia funkcji
+        * Przekazywanie parametru do funkcji
+        * Zwracanie wartości przez funkcje
